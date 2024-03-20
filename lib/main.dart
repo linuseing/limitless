@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:limitless/home.dart';
 
 /// Flutter code sample for [NavigationBar].
 
@@ -68,24 +69,13 @@ class _NavigationExampleState extends State<NavigationExample> {
             label: 'Food',
           ),
           NavigationDestination(
-            icon: Icon(Icons.psychology),
+            icon: Icon(Icons.spa),
             label: 'Mental',
           ),
         ],
       ),
       body: <Widget>[
-        Card(
-          shadowColor: Colors.transparent,
-          margin: const EdgeInsets.all(8.0),
-          child: SizedBox.expand(
-            child: Center(
-              child: Text(
-                'Home page',
-                style: theme.textTheme.titleLarge,
-              ),
-            ),
-          ),
-        ),
+        const Home(),
         Card(
           shadowColor: Colors.transparent,
           margin: const EdgeInsets.all(8.0),
