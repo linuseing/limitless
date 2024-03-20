@@ -77,7 +77,7 @@ class _NavigationExampleState extends State<NavigationExample> {
           ),
         ],
       ),
-      body: <Widget>[
+      body: SafeArea(child: <Widget>[
         /// Home page
         const ExercisePage(),
         const LandingPage(),
