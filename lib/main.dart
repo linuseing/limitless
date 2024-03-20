@@ -45,19 +45,49 @@ class _NavigationExampleState extends State<NavigationExample> {
             label: 'Home',
           ),
           NavigationDestination(
-            icon: Badge(child: Icon(Icons.notifications_sharp)),
-            label: 'Notifications',
+            icon: Icon(Icons.notifications_sharp),
+            label: 'Sport',
           ),
           NavigationDestination(
-            icon: Badge(
-              label: Text('2'),
-              child: Icon(Icons.messenger_sharp),
-            ),
-            label: 'Messages',
+            icon: Icon(Icons.messenger_sharp),
+            label: 'My Coach',
+          ),
+          NavigationDestination(
+            icon: Icon(Icons.messenger_sharp),
+            label: 'Food',
+          ),
+          NavigationDestination(
+            icon: Icon(Icons.messenger_sharp),
+            label: 'Mental',
           ),
         ],
       ),
       body: <Widget>[
+        Card(
+          shadowColor: Colors.transparent,
+          margin: const EdgeInsets.all(8.0),
+          child: SizedBox.expand(
+            child: Center(
+              child: Text(
+                'Home page',
+                style: theme.textTheme.titleLarge,
+              ),
+            ),
+          ),
+        ),
+        Card(
+          shadowColor: Colors.transparent,
+          margin: const EdgeInsets.all(8.0),
+          child: SizedBox.expand(
+            child: Center(
+              child: Text(
+                'Home page',
+                style: theme.textTheme.titleLarge,
+              ),
+            ),
+          ),
+        ),
+
         /// Home page
         Card(
           shadowColor: Colors.transparent,
