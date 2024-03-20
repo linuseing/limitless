@@ -14,7 +14,19 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(useMaterial3: true),
+      theme: ThemeData(
+        useMaterial3: true,
+
+        // Define the default brightness and colors.
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.red,
+          // ···
+          brightness: Brightness.light,
+        ),
+
+        // Define the default `TextTheme`. Use this to specify the default
+        // text styling for headlines, titles, bodies of text, and more.
+      ),
       home: const NavigationExample(),
     );
   }
@@ -40,7 +52,6 @@ class _NavigationExampleState extends State<NavigationExample> {
             currentPageIndex = index;
           });
         },
-        indicatorColor: Colors.amber,
         selectedIndex: currentPageIndex,
         destinations: const <Widget>[
           NavigationDestination(
@@ -49,20 +60,24 @@ class _NavigationExampleState extends State<NavigationExample> {
             label: 'Home',
           ),
           NavigationDestination(
-            icon: Badge(child: Icon(Icons.notifications_sharp)),
-            label: 'Notifications',
+            icon: Icon(Icons.fitness_center_outlined),
+            label: 'Sport',
           ),
           NavigationDestination(
-            icon: Badge(
-              label: Text('2'),
-              child: Icon(Icons.messenger_sharp),
-            ),
-            label: 'Messages',
+            icon: Icon(Icons.face),
+            label: 'My Coach',
+          ),
+          NavigationDestination(
+            icon: Icon(Icons.restaurant),
+            label: 'Food',
+          ),
+          NavigationDestination(
+            icon: Icon(Icons.psychology),
+            label: 'Mental',
           ),
         ],
       ),
-      body: 
-        SafeArea( child: <Widget>[
+      body: <Widget>[
         /// Home page
         const ExercisePage(),
         const LandingPage(),
