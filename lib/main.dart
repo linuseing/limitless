@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:limitless/coach.dart';
 import 'package:limitless/exercise.dart';
 import 'package:limitless/food.dart';
-import 'package:limitless/landing.dart';
+import 'package:limitless/home.dart';
 
 /// Flutter code sample for [NavigationBar].
 
@@ -80,8 +80,8 @@ class _NavigationExampleState extends State<NavigationExample> {
       body: SafeArea(
           child: <Widget>[
         /// Home page
+        const HomePage(),
         const ExercisePage(),
-        const LandingPage(),
         const CoachPage(),
         const FoodPage()
       ][currentPageIndex]),
