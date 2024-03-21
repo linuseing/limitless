@@ -1,202 +1,218 @@
 import 'package:flutter/material.dart';
 
-
 class ExercisePage extends StatelessWidget {
   const ExercisePage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Card(
-  // Define the shape of the card
-  shape: RoundedRectangleBorder(
-    borderRadius: BorderRadius.circular(4),
-  ),
-  // Define how the card's content should be clipped
-  clipBehavior: Clip.antiAliasWithSaveLayer,
-  // Define the child widget of the card
-  child: Column(
-    crossAxisAlignment: CrossAxisAlignment.start,
-    children: <Widget>[
-      gradientCardSample(context)
-    ],
-  ),
-);
+      // Define the shape of the card
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(4),
+      ),
+      // Define how the card's content should be clipped
+      clipBehavior: Clip.antiAliasWithSaveLayer,
+      // Define the child widget of the card
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[gradientCardSample(context)],
+      ),
+    );
   }
 }
 
 Widget gradientCardSample(BuildContext context) {
-    return Container(
-      height: 200,
-      width: double.infinity,
-      padding: const EdgeInsets.all(32),
-      decoration: BoxDecoration(
-          gradient: const LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-            colors: [ Color(0xFF846AFF), Color(0xFF755EE8), Colors.purpleAccent,Colors.amber,],
-          ),
-          borderRadius: radius(16)), // Adds a gradient background and rounded corners to the container
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-
-              Row(
-                children: [
-                  Text('Family Card', style: MyTextSample.headline(context)!.copyWith(
-          color: Colors.white, fontFamily: "monospace"
-      )), // Adds a title to the card
-                  const Spacer(),
-                  Stack(
-                    children: List.generate(
-                      2,
-                          (index) => Container(
-                        margin: EdgeInsets.only(left: (15 * index).toDouble()),
-                        height: 30,
-                        width: 30,
-                        decoration: BoxDecoration(borderRadius: radius(100), color: Colors.white54),
-                      ),
+  return Container(
+    height: 200,
+    width: double.infinity,
+    padding: const EdgeInsets.all(32),
+    decoration: BoxDecoration(
+        gradient: const LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: [
+            Color(0xFF846AFF),
+            Color(0xFF755EE8),
+            Colors.purpleAccent,
+            Colors.amber,
+          ],
+        ),
+        borderRadius: radius(
+            16)), // Adds a gradient background and rounded corners to the container
+    child: Column(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                Text('Family Card',
+                    style: MyTextSample.headline(context)!.copyWith(
+                        color: Colors.white,
+                        fontFamily: "monospace")), // Adds a title to the card
+                const Spacer(),
+                Stack(
+                  children: List.generate(
+                    2,
+                    (index) => Container(
+                      margin: EdgeInsets.only(left: (15 * index).toDouble()),
+                      height: 30,
+                      width: 30,
+                      decoration: BoxDecoration(
+                          borderRadius: radius(100), color: Colors.white54),
                     ),
-                  ) // Adds a stack of two circular containers to the right of the title
-                ],
-              ),
-              Text('4111 7679 8689 9700', style: MyTextSample.subhead(context)!.copyWith(
-                  color: Colors.white, fontFamily: "monospace"
-              )) // Adds a subtitle to the card
-            ],
-          ),
-          const Text('\$3,000', style: TextStyle(
-              fontSize: 24,
-              color: Colors.white
-          )) // Adds a price to the bottom of the card
-        ],
-      ),
-    );
-  }
+                  ),
+                ) // Adds a stack of two circular containers to the right of the title
+              ],
+            ),
+            Text('4111 7679 8689 9700',
+                style: MyTextSample.subhead(context)!.copyWith(
+                    color: Colors.white,
+                    fontFamily: "monospace")) // Adds a subtitle to the card
+          ],
+        ),
+        const Text('\$3,000',
+            style: TextStyle(
+                fontSize: 24,
+                color: Colors.white)) // Adds a price to the bottom of the card
+      ],
+    ),
+  );
+}
 
 double defaultRadius = 8.0;
 const double _cardWidth = 115;
 
 class CardBasicRoute extends StatefulWidget {
-
   const CardBasicRoute({super.key});
 
   @override
   CardBasicRouteState createState() => CardBasicRouteState();
 }
 
-
 class CardBasicRouteState extends State<CardBasicRoute> {
-
   @override
   Widget build(BuildContext context) {
-
-
     return Scaffold(
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(8),
         scrollDirection: Axis.vertical,
         child: Column(
           children: <Widget>[
-            Container(height:25),
-        //..................................................................card view 1
+            Container(height: 25),
+            //..................................................................card view 1
             Card(
-              shape: RoundedRectangleBorder( borderRadius: BorderRadius.circular(4),),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(4),
+              ),
               clipBehavior: Clip.antiAliasWithSaveLayer,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-
                   Padding(
                     padding: const EdgeInsets.all(15),
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
-                        Image.asset(ImgSample.get("reading.png"),
-                          height: 100, width: 100, fit: BoxFit.cover,
+                        Image.asset(
+                          ImgSample.get("reading.png"),
+                          height: 100,
+                          width: 100,
+                          fit: BoxFit.cover,
                         ),
                         Container(width: 20),
                         Expanded(
                           child: Column(
-                            crossAxisAlignment : CrossAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: <Widget>[
                               Container(height: 5),
-                              Text("Cards Title 1",style: MyTextSample.title(context)!.copyWith(color: MyColorsSample.grey_80)),
+                              Text("Cards Title 1",
+                                  style: MyTextSample.title(context)!
+                                      .copyWith(color: MyColorsSample.grey_80)),
                               Container(height: 5),
-                              Text("Sub title", style: MyTextSample.body1(context)!.copyWith(
-                                  color: Colors.grey[500]
-                              )),
+                              Text("Sub title",
+                                  style: MyTextSample.body1(context)!
+                                      .copyWith(color: Colors.grey[500])),
                               Container(height: 10),
-                              Text(MyStringsSample.card_text, maxLines : 2, style: MyTextSample.subhead(context)!.copyWith(
-                                  color: Colors.grey[700]
-                              )),
+                              Text(MyStringsSample.card_text,
+                                  maxLines: 2,
+                                  style: MyTextSample.subhead(context)!
+                                      .copyWith(color: Colors.grey[700])),
                             ],
                           ),
                         )
                       ],
                     ),
                   ),
-
                 ],
               ),
             ),
             Container(height: 5),
 
-        //..................................................................card view 2
+            //..................................................................card view 2
             Card(
-              shape: RoundedRectangleBorder( borderRadius: BorderRadius.circular(8),),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(8),
+              ),
               clipBehavior: Clip.antiAliasWithSaveLayer,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  Image.asset(ImgSample.get('relaxing-man.png'),
-                    height: 160, width: double.infinity, fit: BoxFit.cover,
+                  Image.asset(
+                    ImgSample.get('relaxing-man.png'),
+                    height: 160,
+                    width: double.infinity,
+                    fit: BoxFit.cover,
                   ),
                   Container(
                     padding: const EdgeInsets.fromLTRB(15, 15, 15, 0),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
-                        Text("Cards Title 2", style: TextStyle(
-                            fontSize: 24,
-                            color: Colors.grey[800]
-                        ),),
+                        Text(
+                          "Cards Title 2",
+                          style:
+                              TextStyle(fontSize: 24, color: Colors.grey[800]),
+                        ),
                         Container(height: 10),
-                        Text(MyStringsSample.card_text, style: TextStyle(
-                            fontSize: 15, color: Colors.grey[700]
-                        )),
-
+                        Text(MyStringsSample.card_text,
+                            style: TextStyle(
+                                fontSize: 15, color: Colors.grey[700])),
                         Row(
                           children: <Widget>[
                             const Spacer(),
                             TextButton(
-                              style: TextButton.styleFrom(foregroundColor: Colors.transparent),
-                              child: const Text("SHARE", style: TextStyle(color: MyColorsSample.accent),),
-                              onPressed: (){},
+                              style: TextButton.styleFrom(
+                                  foregroundColor: Colors.transparent),
+                              child: const Text(
+                                "SHARE",
+                                style: TextStyle(color: MyColorsSample.accent),
+                              ),
+                              onPressed: () {},
                             ),
                             TextButton(
-                              style: TextButton.styleFrom(foregroundColor: Colors.transparent),
-                              child: const Text("EXPLORE", style: TextStyle(color: MyColorsSample.accent),),
-                              onPressed: (){},
+                              style: TextButton.styleFrom(
+                                  foregroundColor: Colors.transparent),
+                              child: const Text(
+                                "EXPLORE",
+                                style: TextStyle(color: MyColorsSample.accent),
+                              ),
+                              onPressed: () {},
                             )
                           ],
                         ),
-
                       ],
                     ),
                   ),
-
                   Container(height: 5)
                 ],
               ),
             ),
             Container(height: 5),
 
-
-        //..................................................................card view row
+            //..................................................................card view row
             Row(
               children: <Widget>[
                 Expanded(
@@ -213,8 +229,10 @@ class CardBasicRouteState extends State<CardBasicRoute> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
                           const Padding(
-                            padding: EdgeInsets.only(left: 16, right: 16, top: 8),
-                            child: Text("Today Sales report",
+                            padding:
+                                EdgeInsets.only(left: 16, right: 16, top: 8),
+                            child: Text(
+                              "Today Sales report",
                               maxLines: 2,
                               overflow: TextOverflow.ellipsis,
                               /*style: primaryTextStyle(
@@ -229,10 +247,10 @@ class CardBasicRouteState extends State<CardBasicRoute> {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: const <Widget>[
                                 Text(
-                                  'Feb 27, 2020',//style: secondaryTextStyle(color: appStore.textSecondaryColor),
-
+                                  'Feb 27, 2020', //style: secondaryTextStyle(color: appStore.textSecondaryColor),
                                 ),
-                                Icon(Icons.date_range),//, color: appStore.iconColor
+                                Icon(Icons
+                                    .date_range), //, color: appStore.iconColor
                               ],
                             ),
                           )
@@ -240,12 +258,10 @@ class CardBasicRouteState extends State<CardBasicRoute> {
                       ),
                     ),
                   ),
-
-
                 ),
                 Container(width: 2),
                 Expanded(
-                    flex: 1,
+                  flex: 1,
                   child: Card(
                     elevation: 2,
                     shape: const RoundedRectangleBorder(
@@ -258,8 +274,10 @@ class CardBasicRouteState extends State<CardBasicRoute> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
                           const Padding(
-                            padding: EdgeInsets.only(left: 16, right: 16, top: 8),
-                            child: Text("Today Sales report",
+                            padding:
+                                EdgeInsets.only(left: 16, right: 16, top: 8),
+                            child: Text(
+                              "Today Sales report",
                               maxLines: 2,
                               overflow: TextOverflow.ellipsis,
                               /*style: primaryTextStyle(
@@ -274,10 +292,10 @@ class CardBasicRouteState extends State<CardBasicRoute> {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: const <Widget>[
                                 Text(
-                                  'Feb 27, 2020',//style: secondaryTextStyle(color: appStore.textSecondaryColor),
-
+                                  'Feb 27, 2020', //style: secondaryTextStyle(color: appStore.textSecondaryColor),
                                 ),
-                                Icon(Icons.date_range),//, color: appStore.iconColor
+                                Icon(Icons
+                                    .date_range), //, color: appStore.iconColor
                               ],
                             ),
                           )
@@ -285,16 +303,15 @@ class CardBasicRouteState extends State<CardBasicRoute> {
                       ),
                     ),
                   ),
-
-
                 ),
               ],
             ),
             Container(height: 5),
 
-
             Card(
-              shape: RoundedRectangleBorder( borderRadius: BorderRadius.circular(4),),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(4),
+              ),
               color: MyColorsSample.primaryDark,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -304,34 +321,39 @@ class CardBasicRouteState extends State<CardBasicRoute> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
-                        const Text("Card Background", style: TextStyle(
-                            fontSize: 24,
-                            color: Colors.white
-                        ),),
+                        const Text(
+                          "Card Background",
+                          style: TextStyle(fontSize: 24, color: Colors.white),
+                        ),
                         Container(height: 10),
-                        Text(MyStringsSample.card_text, style: TextStyle(
-                            fontSize: 15, color: Colors.grey[200]
-                        )),
+                        Text(MyStringsSample.card_text,
+                            style: TextStyle(
+                                fontSize: 15, color: Colors.grey[200])),
                       ],
                     ),
                   ),
                   TextButton(
-                    style: TextButton.styleFrom(foregroundColor: Colors.transparent),
-                    child: const Text("LISTEN NOW", style: TextStyle(color: Colors.white),),
-                    onPressed: (){},
+                    style: TextButton.styleFrom(
+                        foregroundColor: Colors.transparent),
+                    child: const Text(
+                      "LISTEN NOW",
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    onPressed: () {},
                   ),
                 ],
               ),
             ),
             Container(height: 5),
 
-
             Row(
               children: <Widget>[
                 Expanded(
                   flex: 1,
                   child: Card(
-                    shape: RoundedRectangleBorder( borderRadius: BorderRadius.circular(4),),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(4),
+                    ),
                     //color: Colors.teal[800],
                     color: MyColorsSample.primary,
                     clipBehavior: Clip.antiAliasWithSaveLayer,
@@ -340,22 +362,34 @@ class CardBasicRouteState extends State<CardBasicRoute> {
                       children: <Widget>[
                         Container(
                           padding: const EdgeInsets.all(15),
-                          child: const Text("Today Event \nLive", style: TextStyle(
-                              fontSize: 24,
-                              color: Colors.white
-                          ),),
+                          child: const Text(
+                            "Today Event \nLive",
+                            style: TextStyle(fontSize: 24, color: Colors.white),
+                          ),
                         ),
-                        const Divider(color: Colors.white, thickness: 0.5, height: 0,),
+                        const Divider(
+                          color: Colors.white,
+                          thickness: 0.5,
+                          height: 0,
+                        ),
                         Row(
                           children: <Widget>[
-                            Container(width: 15,),
-                            const Text("March 19, 2023", style: TextStyle(color: Colors.white),),
+                            Container(
+                              width: 15,
+                            ),
+                            const Text(
+                              "March 19, 2023",
+                              style: TextStyle(color: Colors.white),
+                            ),
                             const Spacer(),
                             IconButton(
-                              icon: const Icon(Icons.event, color: Colors.white),
-                              onPressed: (){},
+                              icon:
+                                  const Icon(Icons.event, color: Colors.white),
+                              onPressed: () {},
                             ),
-                            Container(width: 4,),
+                            Container(
+                              width: 4,
+                            ),
                           ],
                         ),
                       ],
@@ -366,7 +400,9 @@ class CardBasicRouteState extends State<CardBasicRoute> {
                 Expanded(
                   flex: 1,
                   child: Card(
-                    shape: RoundedRectangleBorder( borderRadius: BorderRadius.circular(4),),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(4),
+                    ),
                     color: MyColorsSample.primary,
                     clipBehavior: Clip.antiAliasWithSaveLayer,
                     child: Column(
@@ -374,22 +410,29 @@ class CardBasicRouteState extends State<CardBasicRoute> {
                       children: <Widget>[
                         Row(
                           children: <Widget>[
-                            Container(width: 15,),
-                            const Text("Call", style: TextStyle(color: Colors.white),),
+                            Container(
+                              width: 15,
+                            ),
+                            const Text(
+                              "Call",
+                              style: TextStyle(color: Colors.white),
+                            ),
                             const Spacer(),
                             IconButton(
                               icon: const Icon(Icons.call, color: Colors.white),
-                              onPressed: (){},
+                              onPressed: () {},
                             ),
-                            Container(width: 4,),
+                            Container(
+                              width: 4,
+                            ),
                           ],
                         ),
                         Container(
                           padding: const EdgeInsets.all(15),
-                          child: const Text("John Smith \nTek", style: TextStyle(
-                              fontSize: 24,
-                              color: Colors.white
-                          ),),
+                          child: const Text(
+                            "John Smith \nTek",
+                            style: TextStyle(fontSize: 24, color: Colors.white),
+                          ),
                         ),
                       ],
                     ),
@@ -399,48 +442,62 @@ class CardBasicRouteState extends State<CardBasicRoute> {
             ),
             Container(height: 10),
 
-
             //..................................................................outline card view
             Card(
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(8),
-                side: const BorderSide(color: MyColorsSample.accent, width: 1,),
+                side: const BorderSide(
+                  color: MyColorsSample.accent,
+                  width: 1,
+                ),
               ),
               elevation: 0,
               clipBehavior: Clip.antiAliasWithSaveLayer,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  Image.asset(ImgSample.get('relaxing-man.png'),
-                    height: 140, width: double.infinity, fit: BoxFit.cover,
+                  Image.asset(
+                    ImgSample.get('relaxing-man.png'),
+                    height: 140,
+                    width: double.infinity,
+                    fit: BoxFit.cover,
                   ),
                   Container(
                     padding: const EdgeInsets.fromLTRB(15, 15, 15, 0),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
-                        Text("Card Outlined", style: TextStyle(
-                            fontSize: 24,
-                            color: Colors.grey[800]
-                        ),),
+                        Text(
+                          "Card Outlined",
+                          style:
+                              TextStyle(fontSize: 24, color: Colors.grey[800]),
+                        ),
                         Container(height: 10),
-                        Text(MyStringsSample.card_text, style: TextStyle(
-                            fontSize: 15, color: Colors.grey[700]
-                        ))
+                        Text(MyStringsSample.card_text,
+                            style: TextStyle(
+                                fontSize: 15, color: Colors.grey[700]))
                       ],
                     ),
                   ),
                   Row(
                     children: <Widget>[
                       TextButton(
-                        style: TextButton.styleFrom(foregroundColor: Colors.transparent),
-                        child: const Text("SHARE", style: TextStyle(color: MyColorsSample.accent),),
-                        onPressed: (){},
+                        style: TextButton.styleFrom(
+                            foregroundColor: Colors.transparent),
+                        child: const Text(
+                          "SHARE",
+                          style: TextStyle(color: MyColorsSample.accent),
+                        ),
+                        onPressed: () {},
                       ),
                       TextButton(
-                        style: TextButton.styleFrom(foregroundColor: Colors.transparent),
-                        child: const Text("EXPLORE", style: TextStyle(color: MyColorsSample.accent),),
-                        onPressed: (){},
+                        style: TextButton.styleFrom(
+                            foregroundColor: Colors.transparent),
+                        child: const Text(
+                          "EXPLORE",
+                          style: TextStyle(color: MyColorsSample.accent),
+                        ),
+                        onPressed: () {},
                       )
                     ],
                   ),
@@ -452,7 +509,10 @@ class CardBasicRouteState extends State<CardBasicRoute> {
             Card(
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(8),
-                side: const BorderSide(color: MyColorsSample.primary, width: 2,),
+                side: const BorderSide(
+                  color: MyColorsSample.primary,
+                  width: 2,
+                ),
               ),
               elevation: 0,
               clipBehavior: Clip.antiAliasWithSaveLayer,
@@ -461,14 +521,14 @@ class CardBasicRouteState extends State<CardBasicRoute> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    Text("Card Outlined", style: TextStyle(
-                        fontSize: 24,
-                        color: Colors.grey[800]
-                    ),),
+                    Text(
+                      "Card Outlined",
+                      style: TextStyle(fontSize: 24, color: Colors.grey[800]),
+                    ),
                     Container(height: 10),
-                    Text(MyStringsSample.card_text, style: TextStyle(
-                        fontSize: 15, color: Colors.grey[700]
-                    )),
+                    Text(MyStringsSample.card_text,
+                        style:
+                            TextStyle(fontSize: 15, color: Colors.grey[700])),
                     Container(height: 10),
                   ],
                 ),
@@ -476,27 +536,37 @@ class CardBasicRouteState extends State<CardBasicRoute> {
             ),
             Container(height: 5),
 
-        //..................................................................divider card view
+            //..................................................................divider card view
             Card(
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(6)),
               clipBehavior: Clip.antiAliasWithSaveLayer,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  Image.asset(ImgSample.get('relaxing-man.png'),
-                    height: 180, width: double.infinity, fit: BoxFit.cover,
+                  Image.asset(
+                    ImgSample.get('relaxing-man.png'),
+                    height: 180,
+                    width: double.infinity,
+                    fit: BoxFit.cover,
                   ),
                   Container(
                     padding: const EdgeInsets.all(15),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
-                        Text("Card Title", style: MyTextSample.headline(context)!.copyWith(color: MyColorsSample.grey_80)),
+                        Text("Card Title",
+                            style: MyTextSample.headline(context)!
+                                .copyWith(color: MyColorsSample.grey_80)),
                         Container(
                           margin: const EdgeInsets.symmetric(vertical: 10),
-                          child: Text("Sub title", style: MyTextSample.medium(context).copyWith(color: MyColorsSample.grey_80)),
+                          child: Text("Sub title",
+                              style: MyTextSample.medium(context)
+                                  .copyWith(color: MyColorsSample.grey_80)),
                         ),
-                        Text(MyStringsSample.card_text, style: MyTextSample.subhead(context)!.copyWith(color: MyColorsSample.grey_40)),
+                        Text(MyStringsSample.card_text,
+                            style: MyTextSample.subhead(context)!
+                                .copyWith(color: MyColorsSample.grey_40)),
                       ],
                     ),
                   ),
@@ -509,45 +579,62 @@ class CardBasicRouteState extends State<CardBasicRoute> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
-                        Text("Tonight's availability", style: MyTextSample.medium(context).copyWith(color: MyColorsSample.grey_80)),
+                        Text("Tonight's availability",
+                            style: MyTextSample.medium(context)
+                                .copyWith(color: MyColorsSample.grey_80)),
                         Container(height: 5),
                         Row(
                           children: [
                             ElevatedButton(
                               style: ElevatedButton.styleFrom(
-                                backgroundColor: Colors.grey[300], elevation: 0,
-                                padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 20),
-                                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(18.0)),
+                                backgroundColor: Colors.grey[300],
+                                elevation: 0,
+                                padding: const EdgeInsets.symmetric(
+                                    vertical: 0, horizontal: 20),
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(18.0)),
                               ),
-                              child: const Text("5:30PM", style: TextStyle(color: MyColorsSample.grey_60)),
-                              onPressed: (){},
+                              child: const Text("5:30PM",
+                                  style:
+                                      TextStyle(color: MyColorsSample.grey_60)),
+                              onPressed: () {},
                             ),
                             Container(width: 8),
                             ElevatedButton(
                               style: ElevatedButton.styleFrom(
-                                backgroundColor: Colors.grey[300], elevation: 0,
-                                padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 20),
-                                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(18.0)),
+                                backgroundColor: Colors.grey[300],
+                                elevation: 0,
+                                padding: const EdgeInsets.symmetric(
+                                    vertical: 0, horizontal: 20),
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(18.0)),
                               ),
-                              child: const Text("7:30PM", style: TextStyle(color: MyColorsSample.grey_60)),
-                              onPressed: (){},
+                              child: const Text("7:30PM",
+                                  style:
+                                      TextStyle(color: MyColorsSample.grey_60)),
+                              onPressed: () {},
                             ),
                             Container(width: 8),
                             ElevatedButton(
                               style: ElevatedButton.styleFrom(
-                                backgroundColor: Colors.grey[300], elevation: 0,
-                                padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 20),
-                                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(18.0)),
+                                backgroundColor: Colors.grey[300],
+                                elevation: 0,
+                                padding: const EdgeInsets.symmetric(
+                                    vertical: 0, horizontal: 20),
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(18.0)),
                               ),
-                              child: const Text("8:00PM", style: TextStyle(color: MyColorsSample.grey_60)),
-                              onPressed: (){},
+                              child: const Text("8:00PM",
+                                  style:
+                                      TextStyle(color: MyColorsSample.grey_60)),
+                              onPressed: () {},
                             ),
                           ],
                         )
                       ],
                     ),
                   ),
-                 /* Container(
+                  /* Container(
                     margin: EdgeInsets.symmetric(horizontal: 10),
                     child: TextButton(
                       style: TextButton.styleFrom(primary: Colors.transparent),
@@ -560,44 +647,57 @@ class CardBasicRouteState extends State<CardBasicRoute> {
               ),
             ),
             Container(height: 10),
-        //.................................................................
+            //.................................................................
 
-        //..................................................................gradient card view
-         gradientCardSample(),
-
-
+            //..................................................................gradient card view
+            gradientCardSample(),
 
             Container(height: 10),
             Card(
-              shape: RoundedRectangleBorder( borderRadius: BorderRadius.circular(6),),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(6),
+              ),
               clipBehavior: Clip.antiAliasWithSaveLayer,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  Image.asset(ImgSample.get('maintenance_mode.png'),
-                    height: 250, width: double.infinity, fit: BoxFit.cover,
+                  Image.asset(
+                    ImgSample.get('maintenance_mode.png'),
+                    height: 250,
+                    width: double.infinity,
+                    fit: BoxFit.cover,
                   ),
                   Container(
                     padding: const EdgeInsets.all(15),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
-                        Text("TRAVEL", style: MyTextSample.button(context)!.copyWith(color: MyColorsSample.grey_20)),
+                        Text("TRAVEL",
+                            style: MyTextSample.button(context)!
+                                .copyWith(color: MyColorsSample.grey_20)),
                         Container(height: 5),
-                        Text("5 eats cheap", style: MyTextSample.headline(context)!.copyWith(color: MyColorsSample.grey_80)),
+                        Text("5 eats cheap",
+                            style: MyTextSample.headline(context)!
+                                .copyWith(color: MyColorsSample.grey_80)),
                         Container(height: 15),
-                        Text(MyStringsSample.middle_lorem_ipsum, style: TextStyle(fontSize: 15, color: Colors.grey[600])),
+                        Text(MyStringsSample.middle_lorem_ipsum,
+                            style: TextStyle(
+                                fontSize: 15, color: Colors.grey[600])),
                         Container(height: 10),
                         Row(
                           children: [
                             ElevatedButton(
                               onPressed: () {},
-                              child: Text('VIEW ENTRY', style: MyTextSample.button(context)!),//.copyWith(color: Colors.white)
+                              child: Text('VIEW ENTRY',
+                                  style: MyTextSample.button(
+                                      context)!), //.copyWith(color: Colors.white)
                             ),
                             Container(width: 10),
                             TextButton(
                               onPressed: () {},
-                              child: Text('LEARN MORE', style: MyTextSample.button(context)!.copyWith(color: MyColorsSample.primary)),
+                              child: Text('LEARN MORE',
+                                  style: MyTextSample.button(context)!
+                                      .copyWith(color: MyColorsSample.primary)),
                             ),
                           ],
                         )
@@ -609,7 +709,9 @@ class CardBasicRouteState extends State<CardBasicRoute> {
             ),
             Container(height: 5),
             Card(
-              shape: RoundedRectangleBorder( borderRadius: BorderRadius.circular(6),),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(6),
+              ),
               clipBehavior: Clip.antiAliasWithSaveLayer,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -617,17 +719,23 @@ class CardBasicRouteState extends State<CardBasicRoute> {
                   Stack(
                     alignment: Alignment.center,
                     children: [
-                      Image.asset(ImgSample.get('relaxing-man.png'),
-                        height: 250, width: double.infinity, fit: BoxFit.cover,
+                      Image.asset(
+                        ImgSample.get('relaxing-man.png'),
+                        height: 250,
+                        width: double.infinity,
+                        fit: BoxFit.cover,
                       ),
                       FloatingActionButton.extended(
-                        heroTag: "fab1", backgroundColor: MyColorsSample.primary,
-                        label: const Text('ADD ENTRY', style: TextStyle(
-                            color : Colors.white)),
+                        heroTag: "fab1",
+                        backgroundColor: MyColorsSample.primary,
+                        label: const Text('ADD ENTRY',
+                            style: TextStyle(color: Colors.white)),
                         icon: const Icon(Icons.add, color: Colors.white),
-                        onPressed: () { if (false) {
-                          print('Clicked');
-                        } },
+                        onPressed: () {
+                          if (false) {
+                            print('Clicked');
+                          }
+                        },
                       )
                     ],
                   ),
@@ -636,9 +744,13 @@ class CardBasicRouteState extends State<CardBasicRoute> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
-                        Text("TRAVEL", style: MyTextSample.button(context)!.copyWith(color: MyColorsSample.grey_20)),
+                        Text("TRAVEL",
+                            style: MyTextSample.button(context)!
+                                .copyWith(color: MyColorsSample.grey_20)),
                         Container(height: 5),
-                        Text("Special Menu", style: MyTextSample.headline(context)!.copyWith(color: MyColorsSample.grey_80)),
+                        Text("Special Menu",
+                            style: MyTextSample.headline(context)!
+                                .copyWith(color: MyColorsSample.grey_80)),
                       ],
                     ),
                   ),
@@ -646,28 +758,27 @@ class CardBasicRouteState extends State<CardBasicRoute> {
               ),
             ),
 
-
-
             Container(height: 10),
             SizedBox(
               height: 240,
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 6),
                 child: Card(
-                  shape: RoundedRectangleBorder( borderRadius: BorderRadius.circular(10)),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10)),
                   color: Colors.black,
                   elevation: 2,
                   margin: const EdgeInsets.all(0),
                   child: Stack(
                     fit: StackFit.expand,
                     children: <Widget>[
-                      Image.asset(ImgSample.get('world_map.png'),fit: BoxFit.cover),
+                      Image.asset(ImgSample.get('world_map.png'),
+                          fit: BoxFit.cover),
                       Container(
                         margin: const EdgeInsets.all(20),
                         alignment: Alignment.bottomRight,
                         child: Image.asset(ImgSample.get("ic_copper_card.png"),
-                            width: 60, height: 60
-                        ),
+                            width: 60, height: 60),
                       ),
                       Padding(
                         padding: const EdgeInsets.all(20),
@@ -677,47 +788,60 @@ class CardBasicRouteState extends State<CardBasicRoute> {
                             Row(
                               children: <Widget>[
                                 const Spacer(),
-                                Image.asset(ImgSample.get("ic_visa.png"), color : Colors.white,
-                                    fit: BoxFit.cover, width: 60, height: 30
-                                ),
+                                Image.asset(ImgSample.get("ic_visa.png"),
+                                    color: Colors.white,
+                                    fit: BoxFit.cover,
+                                    width: 60,
+                                    height: 30),
                               ],
                             ),
                             Container(height: 10),
-                            Text("4111111111111111", style: MyTextSample.headline(context)!.copyWith(
-                                color: Colors.white, fontFamily: "monospace"
-                            )),
+                            Text("4111111111111111",
+                                style: MyTextSample.headline(context)!.copyWith(
+                                    color: Colors.white,
+                                    fontFamily: "monospace")),
                             Container(height: 10),
                             Row(
                               children: <Widget>[
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: <Widget>[
-                                    Text("EXPIRE", style: MyTextSample.body1(context)!.copyWith(color: MyColorsSample.grey_10)),
+                                    Text("EXPIRE",
+                                        style: MyTextSample.body1(context)!
+                                            .copyWith(
+                                                color: MyColorsSample.grey_10)),
                                     Container(height: 5),
-                                    Text("11/22", style: MyTextSample.subhead(context)!.copyWith(
-                                        color: Colors.white, fontFamily: "monospace"
-                                    )),
+                                    Text("11/22",
+                                        style: MyTextSample.subhead(context)!
+                                            .copyWith(
+                                                color: Colors.white,
+                                                fontFamily: "monospace")),
                                   ],
                                 ),
                                 Container(width: 20),
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: <Widget>[
-                                    Text("CVV", style: MyTextSample.body1(context)!.copyWith(color: MyColorsSample.grey_10)),
+                                    Text("CVV",
+                                        style: MyTextSample.body1(context)!
+                                            .copyWith(
+                                                color: MyColorsSample.grey_10)),
                                     Container(height: 5),
-                                    Text("568", style: MyTextSample.subhead(context)!.copyWith(
-                                        color: Colors.white, fontFamily: "monospace"
-                                    )),
+                                    Text("568",
+                                        style: MyTextSample.subhead(context)!
+                                            .copyWith(
+                                                color: Colors.white,
+                                                fontFamily: "monospace")),
                                   ],
                                 ),
                                 Container(width: 40)
                               ],
                             ),
-
                             Container(height: 25),
-                            Text("John Smith", style: MyTextSample.subhead(context)!.copyWith(
-                                color: Colors.white, fontFamily: "monospace"
-                            )),
+                            Text("John Smith",
+                                style: MyTextSample.subhead(context)!.copyWith(
+                                    color: Colors.white,
+                                    fontFamily: "monospace")),
                           ],
                         ),
                       )
@@ -727,15 +851,9 @@ class CardBasicRouteState extends State<CardBasicRoute> {
               ),
             ),
 
-
             const Cards(),
             const CardStatelessWidget(),
             const CardInkWellWidget(),
-
-
-
-
-
           ],
         ),
       ),
@@ -751,7 +869,12 @@ class CardBasicRouteState extends State<CardBasicRoute> {
           gradient: const LinearGradient(
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
-            colors: [ Color(0xFF846AFF), Color(0xFF755EE8), Colors.purpleAccent,Colors.amber,],
+            colors: [
+              Color(0xFF846AFF),
+              Color(0xFF755EE8),
+              Colors.purpleAccent,
+              Colors.amber,
+            ],
           ),
           borderRadius: radius(16)),
       child: Column(
@@ -761,59 +884,50 @@ class CardBasicRouteState extends State<CardBasicRoute> {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-
               Row(
                 children: [
-                  Text('Family Card', style: MyTextSample.headline(context)!.copyWith(
-          color: Colors.white, fontFamily: "monospace"
-      )),//, style: boldTextStyle(color: Colors.white, size: 20)
+                  Text('Family Card',
+                      style: MyTextSample.headline(context)!.copyWith(
+                          color: Colors.white,
+                          fontFamily:
+                              "monospace")), //, style: boldTextStyle(color: Colors.white, size: 20)
                   const Spacer(),
                   Stack(
                     children: List.generate(
                       2,
-                          (index) => Container(
+                      (index) => Container(
                         margin: EdgeInsets.only(left: (15 * index).toDouble()),
                         height: 30,
                         width: 30,
-                        decoration: BoxDecoration(borderRadius: radius(100), color: Colors.white54),
+                        decoration: BoxDecoration(
+                            borderRadius: radius(100), color: Colors.white54),
                       ),
                     ),
                   )
                 ],
               ),
-              Text('4111 7679 8689 9700', style: MyTextSample.subhead(context)!.copyWith(
-                  color: Colors.white, fontFamily: "monospace"
-              ))
+              Text('4111 7679 8689 9700',
+                  style: MyTextSample.subhead(context)!
+                      .copyWith(color: Colors.white, fontFamily: "monospace"))
             ],
           ),
-          const Text('\$3,000', style: TextStyle(
-              fontSize: 24,
-              color: Colors.white
-          ))
+          const Text('\$3,000',
+              style: TextStyle(fontSize: 24, color: Colors.white))
         ],
       ),
     );
   }
-
 }
-
-
-
-
-
 
 /// returns Radius
 BorderRadius radius([double? radius]) {
   return BorderRadius.all(radiusCircular(radius ?? defaultRadius));
 }
+
 /// returns Radius
 Radius radiusCircular([double? radius]) {
   return Radius.circular(radius ?? defaultRadius);
 }
-
-
-
-
 
 class Cards extends StatelessWidget {
   const Cards({super.key});
@@ -903,53 +1017,44 @@ class Cards extends StatelessWidget {
   }
 }
 
-
-
-
-
 class CardStatelessWidget extends StatelessWidget {
   const CardStatelessWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Center(
-      child:
-        Padding(
-        padding: const EdgeInsets.symmetric(vertical: 10),
-          child: Card(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
+        child: Padding(
+      padding: const EdgeInsets.symmetric(vertical: 10),
+      child: Card(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: <Widget>[
+            const ListTile(
+              leading: Icon(Icons.album),
+              title: Text('The Enchanted Nightingale'),
+              subtitle: Text('Music by Julie Gable. Lyrics by Sidney Stein.'),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
               children: <Widget>[
-                const ListTile(
-                  leading: Icon(Icons.album),
-                  title: Text('The Enchanted Nightingale'),
-                  subtitle: Text('Music by Julie Gable. Lyrics by Sidney Stein.'),
+                TextButton(
+                  child: const Text('BUY TICKETS'),
+                  onPressed: () {/* ... */},
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: <Widget>[
-                    TextButton(
-                      child: const Text('BUY TICKETS'),
-                      onPressed: () {/* ... */},
-                    ),
-                    const SizedBox(width: 8),
-                    TextButton(
-                      child: const Text('LISTEN'),
-                      onPressed: () {/* ... */},
-                    ),
-                    const SizedBox(width: 8),
-                  ],
+                const SizedBox(width: 8),
+                TextButton(
+                  child: const Text('LISTEN'),
+                  onPressed: () {/* ... */},
                 ),
+                const SizedBox(width: 8),
               ],
             ),
-          ),
-        )
-
-    );
+          ],
+        ),
+      ),
+    ));
   }
 }
-
-
 
 class CardInkWellWidget extends StatelessWidget {
   const CardInkWellWidget({super.key});
@@ -971,9 +1076,7 @@ class CardInkWellWidget extends StatelessWidget {
           child: const SizedBox(
             width: double.infinity,
             height: 100,
-            child: Center(
-                child: Text('A card that can be tapped')
-            ),
+            child: Center(child: Text('A card that can be tapped')),
           ),
         ),
       ),
@@ -981,12 +1084,11 @@ class CardInkWellWidget extends StatelessWidget {
   }
 }
 
-
 ////////////////////////////////////////////////////////////////////////////////
 /*Load image from folder assets/images/
  */
 class ImgSample {
-  static String get(String name){
+  static String get(String name) {
     return 'assets/images/$name';
   }
 }
@@ -1012,72 +1114,73 @@ class MyColorsSample {
   static const Color grey_100_ = Color(0xFF0d0d0d);
   static const Color transparent = Color(0x00f7f7f7);
 }
-class MyTextSample{
 
-  static TextStyle? display4(BuildContext context){
+class MyTextSample {
+  static TextStyle? display4(BuildContext context) {
     return Theme.of(context).textTheme.displayLarge;
   }
 
-  static TextStyle? display3(BuildContext context){
+  static TextStyle? display3(BuildContext context) {
     return Theme.of(context).textTheme.displayMedium;
   }
 
-  static TextStyle? display2(BuildContext context){
+  static TextStyle? display2(BuildContext context) {
     return Theme.of(context).textTheme.displaySmall;
   }
 
-  static TextStyle? display1(BuildContext context){
+  static TextStyle? display1(BuildContext context) {
     return Theme.of(context).textTheme.headlineMedium;
   }
 
-  static TextStyle? headline(BuildContext context){
+  static TextStyle? headline(BuildContext context) {
     return Theme.of(context).textTheme.headlineSmall;
   }
 
-  static TextStyle? title(BuildContext context){
+  static TextStyle? title(BuildContext context) {
     return Theme.of(context).textTheme.titleLarge;
   }
 
-  static TextStyle medium(BuildContext context){
+  static TextStyle medium(BuildContext context) {
     return Theme.of(context).textTheme.titleMedium!.copyWith(
-      fontSize: 18,
-    );
+          fontSize: 18,
+        );
   }
 
-  static TextStyle? subhead(BuildContext context){
+  static TextStyle? subhead(BuildContext context) {
     return Theme.of(context).textTheme.titleMedium;
   }
 
-  static TextStyle? body2(BuildContext context){
+  static TextStyle? body2(BuildContext context) {
     return Theme.of(context).textTheme.bodyLarge;
   }
 
-  static TextStyle? body1(BuildContext context){
+  static TextStyle? body1(BuildContext context) {
     return Theme.of(context).textTheme.bodyMedium;
   }
 
-  static TextStyle? caption(BuildContext context){
+  static TextStyle? caption(BuildContext context) {
     return Theme.of(context).textTheme.bodySmall;
   }
 
-  static TextStyle? button(BuildContext context){
-    return Theme.of(context).textTheme.labelLarge!.copyWith(
-        letterSpacing: 1
-    );
+  static TextStyle? button(BuildContext context) {
+    return Theme.of(context).textTheme.labelLarge!.copyWith(letterSpacing: 1);
   }
 
-  static TextStyle? subtitle(BuildContext context){
+  static TextStyle? subtitle(BuildContext context) {
     return Theme.of(context).textTheme.titleSmall;
   }
 
-  static TextStyle? overline(BuildContext context){
+  static TextStyle? overline(BuildContext context) {
     return Theme.of(context).textTheme.labelSmall;
   }
 }
 
 class MyStringsSample {
-  static const String lorem_ipsum = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam efficitur ipsum in placerat molestie.  Fusce quis mauris a enim sollicitudin"
+  static const String lorem_ipsum =
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam efficitur ipsum in placerat molestie.  Fusce quis mauris a enim sollicitudin"
       "\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam efficitur ipsum in placerat molestie.  Fusce quis mauris a enim sollicitudin";
-  static const String middle_lorem_ipsum = "Flutter is an open-source UI software development kit created by Google. It is used to develop cross-platform applications for Android, iOS, Linux, macOS, Windows, Google Fuchsia, and the web from a single codebase.";
-  static const String card_text = "Cards are surfaces that display content and actions on a single topic.";
+  static const String middle_lorem_ipsum =
+      "Flutter is an open-source UI software development kit created by Google. It is used to develop cross-platform applications for Android, iOS, Linux, macOS, Windows, Google Fuchsia, and the web from a single codebase.";
+  static const String card_text =
+      "Cards are surfaces that display content and actions on a single topic.";
 }
