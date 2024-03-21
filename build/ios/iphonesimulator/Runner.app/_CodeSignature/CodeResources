@@ -46,7 +46,7 @@
 		</data>
 		<key>Frameworks/App.framework/App</key>
 		<data>
-		O2S4Ljo+e8vMZFmCDBYvosnDFDo=
+		hwsyTWEKvdkyqWljTxhCtJarDJw=
 		</data>
 		<key>Frameworks/App.framework/Info.plist</key>
 		<data>
@@ -54,15 +54,15 @@
 		</data>
 		<key>Frameworks/App.framework/_CodeSignature/CodeResources</key>
 		<data>
-		2N6bVKWjNCTL8bBhB/A5Ws8KKJU=
+		IxX/9oAKJmiKdB5RkJMKwH7q7kc=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.bin</key>
 		<data>
-		ME0cAg6cl/bTZmwXEVgMugDccUI=
+		icjUe7PHHLNDm+fsbUZNJmU5q18=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
 		<data>
-		oG5/OGn+vw7vp/nu5DUDoZJ4nFc=
+		LKmHLUf2shA6UakR3xdelbYfLaA=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/FontManifest.json</key>
 		<data>
@@ -71,6 +71,14 @@
 		<key>Frameworks/App.framework/flutter_assets/NOTICES.Z</key>
 		<data>
 		sEzUcP8szJOChZ1wjqKOD5t0LFE=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/food.png</key>
+		<data>
+		YpZwvcV61taeGfgWbNQdD4LbLLU=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/maennlicher_mann.png</key>
+		<data>
+		Ln8C9Rw/KK6EZl4aUTMSr57Dooc=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/fonts/MaterialIcons-Regular.otf</key>
 		<data>
@@ -82,7 +90,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/kernel_blob.bin</key>
 		<data>
-		KEWGZ3hU+e4iLpWfDGsYAkhQ8qU=
+		p2EJFplRZ38IoFMZBYYGMuTkSFs=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
 		<data>
@@ -269,7 +277,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			MgpPVELZmKowAl4oUdy/mJEUqggm61f2xYeJbB7ldLY=
+			VU2cwSrxP0zDhsRRADeC1mIZFDusQd6yftoJY/bCssQ=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/Info.plist</key>
@@ -283,21 +291,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			fzoDVz6kHQljCs6UkJ9USHngF8VaYOCuPAgDp9MnEnk=
+			GvjS5MnJTZfLucObKvaQk5/90atMjKmrfFgklC9kIyA=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.bin</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			AK9VrT1vIYmP534P8JLRoc2lLJQbaGDpko1FyK+MCV0=
+			pnIUxGuMyAKujTshskx+UngSMYW2bqOhQt3COaTtzdY=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Sps95+7JukayebvM0TLjL1LW1VXXndpKp/O8tOm9ZR8=
+			FL3koJ5I3nPGRB0G93DG1Q0pYMW4wTYjOy2TqlgRJZc=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/FontManifest.json</key>
@@ -312,6 +320,20 @@
 			<key>hash2</key>
 			<data>
 			qIshGhnt9x0o1cEL2zGCG6WiLpjhDMTDb8/2KdtINLM=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/food.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			WhODOjlaTkKt4SIjk8URfG6i/11wmnu9Ao7a11Io81c=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/maennlicher_mann.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			xjPaWgRd/Tk7+fLm3ssiBPs64orCzWloGJ3RjILd05k=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/fonts/MaterialIcons-Regular.otf</key>
@@ -332,7 +354,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			IS+Mrb3v0SR9Sscty1VJCepywFOZwa0ov80Ahwg9mzc=
+			IWV07SHpEJkF8NGs8OL7Au0P3WO5o2yAxLJqyr+0CZQ=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>

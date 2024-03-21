@@ -18,9 +18,10 @@ class HomePage extends StatelessWidget {
               style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
             ),
             Text('ich hoffe dir geht es richtig beschissen!'),
+            SizedBox(height: 16),
             Container(
               width: double.infinity,
-              child: Card(
+              child: Card.outlined(
                 child: Padding(
                   padding: EdgeInsets.all(16.0),
                   child: Column(
@@ -38,6 +39,7 @@ class HomePage extends StatelessWidget {
                 ),
               ),
             ),
+            SizedBox(height: 16),
             Text('Your current progress',
                 style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold)),
             Row(
@@ -93,6 +95,22 @@ class HomePage extends StatelessWidget {
             SizedBox(height: 16),
             Text('Personal Recommendations',
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+            Row(
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment
+                      .start, // Aligns children to the start (left in LTR languages)
+                  children: [
+                    Image(image: AssetImage('assets/food.png')),
+                    Text(
+                      "Sticky Coconut Chicken and Rice",
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                    Text("30-40 minutes")
+                  ],
+                ),
+              ],
+            )
           ],
         ),
       ),
