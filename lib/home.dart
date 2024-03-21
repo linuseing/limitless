@@ -22,6 +22,22 @@ class _HomePageState extends State<HomePage> {
   final TextEditingController colorController = TextEditingController();
   CityLabel? selectedColor;
 
+  final List<Map<String, dynamic>> recommendations = [
+    {
+      'image': 'assets/food.png',
+      'title': 'Sticky Coconut Chicken and Rice',
+      'duration': '30-40 minutes',
+      'icon': Icons.timer_outlined,
+    },
+    {
+      'image': 'assets/run.png',
+      'title': 'BellFood Run',
+      'duration': 'St. Gallen, Switzerland',
+      'icon': Icons.location_on_outlined,
+    },
+    // Add more items as needed
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -205,16 +221,33 @@ class _HomePageState extends State<HomePage> {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Image(
-                              image: AssetImage('assets/food.png'),
-                              fit: BoxFit.cover,
-                              width: 220, // Set the desired width
+                            Container(
+                              width: 240,
+                              height: 120,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(
+                                    16.0), // Adjust the radius as needed
+                                image: DecorationImage(
+                                  image: AssetImage(
+                                      recommendations[index]['image']),
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
                             ),
                             Text(
-                              "Sticky Coconut Chicken and Rice",
+                              recommendations[index]['title'],
                               style: TextStyle(fontWeight: FontWeight.bold),
                             ),
-                            Text("30-40 minutes"),
+                            Row(
+                              children: [
+                                Icon(
+                                  recommendations[index]['icon'],
+                                  size: 16,
+                                ), // Icon
+                                SizedBox(width: 4), // Spacer
+                                Text(recommendations[index]['duration']),
+                              ],
+                            ),
                           ],
                         ),
                       ),
