@@ -26,10 +26,20 @@ class HomePage extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
-                          'Today',
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 18),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'Today',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold, fontSize: 18),
+                            ),
+                            Text(
+                              "See All",
+                              style: TextStyle(
+                                  decoration: TextDecoration.underline),
+                            ),
+                          ],
                         ),
                         Row(
                           children: [
@@ -149,8 +159,19 @@ class HomePage extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 16),
-              const Text('Personal Recommendations',
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'Personal Recommendations',
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+                  ),
+                  Text(
+                    "See All",
+                    style: TextStyle(decoration: TextDecoration.underline),
+                  ),
+                ],
+              ),
               Flexible(
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
