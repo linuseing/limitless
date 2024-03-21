@@ -1,22 +1,69 @@
 import 'package:flutter/material.dart';
+import 'package:limitless/message_bubble.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+// DropdownMenuEntry labels and values for the first dropdown menu.
+enum CityLabel {
+  stgallen('St. Gallen', 'Switzerland'),
+  zurich('Zurich', 'Switzerland');
+
+  const CityLabel(this.name, this.country);
+  final String name;
+  final String country;
+}
+
+class HomePage extends StatefulWidget {
+  const HomePage({Key? key});
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  final TextEditingController colorController = TextEditingController();
+  CityLabel? selectedColor;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.all(32.0),
-        child: Flexible(
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(32.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text(
-                'Hello, Sven',
-                style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+              DropdownMenu<CityLabel>(
+                initialSelection: CityLabel.stgallen,
+                controller: colorController,
+                requestFocusOnTap: true,
+                onSelected: (CityLabel? city) {
+                  setState(() {
+                    selectedColor = city;
+                  });
+                },
+                dropdownMenuEntries: CityLabel.values
+                    .map<DropdownMenuEntry<CityLabel>>((CityLabel city) {
+                  return DropdownMenuEntry<CityLabel>(
+                    value: city,
+                    label: '${city.name}, ${city.country}',
+                  );
+                }).toList(),
+                enableSearch: false,
+                enableFilter: false,
               ),
-              const Text('ich hoffe dir geht es richtig beschissen!'),
+              const SizedBox(width: 24),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Text(
+                    'Hello, Milena',
+                    style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+                  ),
+                  Image(
+                      image: AssetImage("assets/milena.png"),
+                      fit: BoxFit.cover,
+                      width: 40),
+                ],
+              ),
               const SizedBox(height: 16),
               Container(
                 width: double.infinity,
@@ -37,7 +84,8 @@ class HomePage extends StatelessWidget {
                             Text(
                               "See All",
                               style: TextStyle(
-                                  decoration: TextDecoration.underline),
+                                  decoration: TextDecoration.underline,
+                                  fontSize: 12),
                             ),
                           ],
                         ),
@@ -85,7 +133,6 @@ class HomePage extends StatelessWidget {
                             ),
                             Expanded(
                               child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text('Move',
                                       style: TextStyle(
@@ -106,58 +153,31 @@ class HomePage extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 16),
-              const Text('Your current progress',
-                  style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold)),
-              const Row(
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Expanded(
-                    child: Card.outlined(
-                      child: Padding(
-                        padding: EdgeInsets.all(16.0),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Row(
-                              children: [
-                                Icon(Icons.local_fire_department_outlined),
-                                SizedBox(width: 4), // Add this line
-                                Text('Steps',
-                                    style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 18)),
-                              ],
-                            ),
-                            Text('10234'),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                  Expanded(
-                    child: Card.outlined(
-                      child: Padding(
-                        padding: EdgeInsets.all(16.0),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Row(
-                              children: [
-                                Icon(Icons.favorite),
-                                SizedBox(width: 4), // Add this line
-                                Text('Heat Rate',
-                                    style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 18)),
-                              ],
-                            ),
-                            Text('10234'),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
+                  Image(
+                      image: AssetImage("assets/maennlicher_mann.png"),
+                      fit: BoxFit.cover,
+                      width: 100),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      MessageBubble(
+                          sender: "Bell Coach",
+                          text: "How are you feeling today?"),
+                      FilledButton(
+                          onPressed: () {},
+                          style: ButtonStyle(
+                            minimumSize: MaterialStateProperty.all(
+                                Size(80, 24)), // Adjust the size as needed
+                          ),
+                          child: const Text("Take Questionnaire")),
+                    ],
+                  )
                 ],
               ),
+              const SizedBox(height: 16),
               const SizedBox(height: 16),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -168,19 +188,21 @@ class HomePage extends StatelessWidget {
                   ),
                   Text(
                     "See All",
-                    style: TextStyle(decoration: TextDecoration.underline),
+                    style: TextStyle(
+                        decoration: TextDecoration.underline, fontSize: 12),
                   ),
                 ],
               ),
-              Flexible(
+              SizedBox(
+                height: 200, // Set the height as needed
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
                   itemCount:
                       2, // Replace itemCount with the actual number of items
                   itemBuilder: (BuildContext context, int index) {
-                    return const Expanded(
+                    return Expanded(
                       child: Padding(
-                        padding: EdgeInsets.all(8.0),
+                        padding: const EdgeInsets.all(8.0),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -200,7 +222,7 @@ class HomePage extends StatelessWidget {
                     );
                   },
                 ),
-              )
+              ),
             ],
           ),
         ),
