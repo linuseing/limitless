@@ -7,9 +7,6 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-<<<<<<< HEAD
-    return Text("data");
-=======
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.all(32.0),
@@ -132,6 +129,5 @@ class HomePage extends StatelessWidget {
         ),
       ),
     );
->>>>>>> 8299da07d8b178bc1bd84daaea5981520b14e321
   }
 }
