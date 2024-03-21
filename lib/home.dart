@@ -93,14 +93,6 @@ class HomePage extends StatelessWidget {
             SizedBox(height: 16),
             Text('Personal Recommendations',
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
-            ListView(
-              scrollDirection: Axis.horizontal,
-              children: [
-                Text('Upper Body'),
-                Text('Lower Body'),
-                Text('Cardio'),
-              ],
-            ),
           ],
         ),
       ),
