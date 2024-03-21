@@ -12,6 +12,7 @@ class HomePage extends StatelessWidget {
         padding: const EdgeInsets.all(32.0),
         child: Flexible(
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
                 'Hello, Sven',
@@ -28,12 +29,69 @@ class HomePage extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Daily challenge',
-                          style: TextStyle(fontWeight: FontWeight.bold),
+                          'Today',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 18),
                         ),
-                        Text('Upper Body'),
-                        Text('Chest and back'),
-                        Text('45 min'),
+                        Row(
+                          children: [
+                            Expanded(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text('Move',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold)),
+                                  Text('453 kcal',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 18,
+                                          color: Colors.grey)),
+                                ],
+                              ),
+                            ),
+                            VerticalDivider(
+                              width: 1,
+                              thickness: 1,
+                              color: Colors.grey,
+                            ),
+                            Expanded(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text('Move',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold)),
+                                  Text('30 min',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 18,
+                                          color: Colors.grey)),
+                                ],
+                              ),
+                            ),
+                            VerticalDivider(
+                              width: 1,
+                              thickness: 1,
+                              color: Colors.grey,
+                            ),
+                            Expanded(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text('Move',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold)),
+                                  Text('10 hr',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 18,
+                                          color: Colors.grey)),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
                       ],
                     ),
                   ),
