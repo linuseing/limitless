@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -14,15 +12,15 @@ class HomePage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
+              const Text(
                 'Hello, Sven',
                 style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
               ),
-              Text('ich hoffe dir geht es richtig beschissen!'),
-              SizedBox(height: 16),
+              const Text('ich hoffe dir geht es richtig beschissen!'),
+              const SizedBox(height: 16),
               Container(
                 width: double.infinity,
-                child: Card.outlined(
+                child: const Card.outlined(
                   child: Padding(
                     padding: EdgeInsets.all(16.0),
                     child: Column(
@@ -97,10 +95,10 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 16),
-              Text('Your current progress',
+              const SizedBox(height: 16),
+              const Text('Your current progress',
                   style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold)),
-              Row(
+              const Row(
                 children: [
                   Expanded(
                     child: Card.outlined(
@@ -150,8 +148,8 @@ class HomePage extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(height: 16),
-              Text('Personal Recommendations',
+              const SizedBox(height: 16),
+              const Text('Personal Recommendations',
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
               Flexible(
                 child: ListView.builder(
@@ -159,7 +157,7 @@ class HomePage extends StatelessWidget {
                   itemCount:
                       2, // Replace itemCount with the actual number of items
                   itemBuilder: (BuildContext context, int index) {
-                    return Expanded(
+                    return const Expanded(
                       child: Padding(
                         padding: EdgeInsets.all(8.0),
                         child: Column(
