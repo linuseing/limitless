@@ -50,7 +50,7 @@ class _HomePageState extends State<HomePage> {
                 enableSearch: false,
                 enableFilter: false,
               ),
-              const SizedBox(width: 24),
+              const SizedBox(width: 8),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -64,7 +64,7 @@ class _HomePageState extends State<HomePage> {
                       width: 40),
                 ],
               ),
-              const SizedBox(height: 16),
+              const SizedBox(height: 8),
               Container(
                 width: double.infinity,
                 child: const Card.outlined(
@@ -152,7 +152,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
               ),
-              const SizedBox(height: 16),
+              const SizedBox(height: 8),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -177,8 +177,7 @@ class _HomePageState extends State<HomePage> {
                   )
                 ],
               ),
-              const SizedBox(height: 16),
-              const SizedBox(height: 16),
+              const SizedBox(height: 8),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
