@@ -80,7 +80,6 @@ class _HomePageState extends State<HomePage> {
                   );
                 }).toList(),
               ),
-              const SizedBox(width: 8),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -89,9 +88,16 @@ class _HomePageState extends State<HomePage> {
                     style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
                   ),
                   Image(
-                      image: AssetImage("assets/milena.png"),
-                      fit: BoxFit.cover,
-                      width: 40),
+                    image: AssetImage("assets/milena.png"),
+                    fit: BoxFit.cover,
+                    width: 40,
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => ProfileView()),
+                      );
+                    },
+                  ),
                 ],
               ),
               const SizedBox(height: 16),
@@ -331,10 +337,22 @@ class _HomePageState extends State<HomePage> {
                 children: [
                   CircleAvatar(
                     radius: 16,
-                    backgroundImage: AssetImage("assets/milena.png"),
+                    backgroundImage: AssetImage("assets/avatar3.png"),
+                  ),
+                  SizedBox(width: 4),
+                  CircleAvatar(
+                    radius: 16,
+                    backgroundImage: AssetImage("assets/avatar1.png"),
+                  ),
+                  SizedBox(width: 4),
+                  CircleAvatar(
+                    radius: 16,
+                    backgroundImage: AssetImage("assets/avatar2.png"),
                   ),
                   SizedBox(width: 8),
-                  Text('3 of your co-workers are already participating '),
+                  Flexible(
+                      child: Text(
+                          '3 of your co-workers are already participating ')),
                 ],
               ),
               SizedBox(height: 16),

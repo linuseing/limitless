@@ -61,6 +61,9 @@ flutter:
     - assets/food.png
     - assets/milena.png
     - assets/run.png
+    - assets/avatar1.png
+    - assets/avatar2.png
+    - assets/avatar3.png
   # To add assets to your application, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg

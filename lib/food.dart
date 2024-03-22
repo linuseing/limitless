@@ -37,54 +37,26 @@ class FoodPage extends StatelessWidget {
               style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 16),
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
+            GridView.count(
+              crossAxisCount: 2, // Display two cards side by side
+              shrinkWrap: true, // Make GridView adapt its size to its contents
+              physics: NeverScrollableScrollPhysics(), // Disable scrolling
+              children: [
                 Card(
-                  child: Padding(
-                    padding: EdgeInsets.all(16.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
-                        Text(
-                          'You’re doing great!',
-                          style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        const SizedBox(height: 8),
-                        Text(
-                          'You’ve been eating a up!',
-                          style: TextStyle(
-                            fontSize: 16,
-                          ),
-                        ),
-                      ],
+                  child: Container(
+                    width: double.infinity, // Make the card take full width
+                    height: double.infinity, // Make the card take full height
+                    child: Center(
+                      child: Text('Card 1'), // Replace with your content
                     ),
                   ),
                 ),
                 Card(
-                  child: Padding(
-                    padding: EdgeInsets.all(16.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
-                        Text(
-                          'Remember to stay hydrated!',
-                          style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        const SizedBox(height: 8),
-                        Text(
-                          'Drinking water is essential ',
-                          style: TextStyle(
-                            fontSize: 16,
-                          ),
-                        ),
-                      ],
+                  child: Container(
+                    width: double.infinity, // Make the card take full width
+                    height: double.infinity, // Make the card take full height
+                    child: Center(
+                      child: Text('Card 2'), // Replace with your content
                     ),
                   ),
                 ),
@@ -99,7 +71,7 @@ class FoodPage extends StatelessWidget {
                 "We found some receipts specially for you  based on your recent nutrition habits."),
             SizedBox(height: 16),
             SizedBox(
-              height: 200, // Set the height as needed
+              height: 180, // Set the height as needed
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 itemCount:
@@ -148,7 +120,6 @@ class FoodPage extends StatelessWidget {
                 },
               ),
             ),
-            const SizedBox(height: 16),
             Text(
               'Featured by your co-workers',
               style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
